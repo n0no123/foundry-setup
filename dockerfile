@@ -1,13 +1,13 @@
-FROM node:18-alpine
+FROM node:20-alpine
 
 RUN addgroup -g 1001 -S foundry && adduser -u 1001 -G foundry -S foundry
 
 USER foundry
 
-WORKDIR /home/foundry/app
-COPY --chown=foundry:foundry /app/ .
+WORKDIR /home/foundry/foundryvtt
+COPY --chown=foundry:foundry /foundryvtt/ .
 
-WORKDIR /home/foundry/data
-COPY --chown=foundry:foundry /data/ .
+WORKDIR /home/foundry/foundrydata
+COPY --chown=foundry:foundry /foundrydata/ .
 
 EXPOSE 30000

@@ -1,14 +1,14 @@
 services:
   foundry:
     build: .
-    command: node /home/foundry/app/resources/app/main.js
+    command: node /home/foundry/foundryvtt/main.js
     container_name: foundry-vtt
     environment:
-      - FOUNDRY_VTT_DATA_PATH=/home/foundry/data
+      - FOUNDRY_VTT_DATA_PATH=/home/foundry/foundrydata
     image: foundry:latest
     ports:
       - "30000:30000"
     restart: unless-stopped
     volumes:
-      - /home/${USER}/foundry/app:/home/foundry/app
-      - /home/${USER}/foundry/data:/home/foundry/data
+      - /home/${USER}/foundry/foundryvtt:/home/foundry/foundryvtt
+      - /home/${USER}/foundry/foundrydata:/home/foundry/foundrydata
